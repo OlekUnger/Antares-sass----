@@ -430,14 +430,14 @@ h3 {
   padding: 0;
 }
 
-.main-aside .features .feature-list_item {
+.main-aside .feature-list_item {
   position: relative;
   margin-bottom: 10px;
   display: block;
   padding: 0 0 0 20px;
 }
 
-.main-aside .features .feature-list_item::before {
+.main-aside .feature-list_item::before {
   content: "";
   position: absolute;
   height: 7px;
@@ -449,12 +449,12 @@ h3 {
   background-position: -56px -85px;
 }
 
-.main-aside .features .feature-list_link {
+.main-aside .feature-list_link {
   color: #fff;
   letter-spacing: -0.3px;
   font: 400 13px/20px "PT Sans Caption", sans-serif;
 }
 
-.main-aside .features .feature-list_link:hover {
+.main-aside .feature-list_link:hover {
   border-bottom: 1px solid #fff;
 }
