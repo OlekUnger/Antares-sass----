@@ -1,307 +1,307 @@
 @import "mixins"
 
 html.js .loader
-	background: none repeat scroll 0 0 #ffffff
-	bottom: 0
-	height: 100%
-	left: 0
-	position: fixed
-	right: 0
-	top: 0
-	width: 100%
-	z-index: 9999
-	.loader_inner
-		background-image: url("../img/preloader.gif")
-		background-size: cover
-		background-repeat: no-repeat
-		background-position: center center
-		background-color: #fff
-		height: 60px
-		width: 60px
-		margin-top: -30px
-		margin-left: -30px
-		left: 50%
-		top: 50%
-		position: absolute
+    background: none repeat scroll 0 0 #ffffff
+    bottom: 0
+    height: 100%
+    left: 0
+    position: fixed
+    right: 0
+    top: 0
+    width: 100%
+    z-index: 9999
+    .loader_inner
+        background-image: url("../img/preloader.gif")
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center center
+        background-color: #fff
+        height: 60px
+        width: 60px
+        margin-top: -30px
+        margin-left: -30px
+        left: 50%
+        top: 50%
+        position: absolute
 
 body
-	font-family: "PT Sans Caption", sans-serif
-	font-weight: normal
-	font-size: 13px
-	min-width: 320px
-	position: relative
-	line-height: 1.6
-	-webkit-font-smoothing: antialiased
-	overflow-x: hidden
+    font-family: "PT Sans Caption", sans-serif
+    font-weight: normal
+    font-size: 13px
+    min-width: 320px
+    position: relative
+    line-height: 1.6
+    -webkit-font-smoothing: antialiased
+    overflow-x: hidden
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: red
+    color: red
 body input:required:valid,
 body textarea:required:valid
-	color: green
+    color: green
 
 .hidden
-	display: none
+    display: none
 *
-	box-sizing: border-box
+    box-sizing: border-box
 
 .clearfix
-	@include clearfix
+    @include clearfix
 
 
 ul
-	list-style-type: none
+    list-style-type: none
 
 img
-	width: 100%
-	display: block
-	height: auto
+    width: 100%
+    display: block
+    height: auto
 h3
-	color: $dark-text
-	font: 700 18px/25px "PT Sans Caption", sans-serif
-	text-transform: uppercase
+    color: $dark-text
+    font: 700 18px/25px "PT Sans Caption", sans-serif
+    text-transform: uppercase
 *
-	box-sizing:border-box!important	
-	
-	// HEADER----------------------
+    box-sizing:border-box!important 
+    
+    // HEADER----------------------
 
 #header
-	margin-bottom: 30px
-	box-shadow: inset 0 5px 0 0 $orange-color
+    margin-bottom: 30px
+    box-shadow: inset 0 5px 0 0 $orange-color
 .top-header
-	height: 100px
-	padding-top: 34px
-	margin-bottom: 20px
-	&_logo
-		display: block
-		margin-top: -7px
-		@include size(267px 59px)
-	&_menu
-		margin: 0 0 0 30px
-		padding: 0
-	.top-menu
-		&_item
-			@include inline-top
-		&_link
-			position: relative
-			color: $dark-text
-			font: 700 12px/31px "PT Sans Caption", sans-serif
-			letter-spacing: 0.5px
-			display: block
-			padding: 30px 8px 0
-			text-align: center
-			text-transform: uppercase
-			background-position: 50% 0
-			background-repeat: no-repeat
-	&_contacts
-		text-align: left		
-	.left-contacts
-		margin-top: 8px
-		&_phone
-			color:  $dark-text
-			font: 18px/20px "PT Sans Caption", sans-serif
-			text-transform: uppercase
-		&_mail
-			font: 13px/20px "PT Sans Caption", sans-serif
-			color: $orange-color
-	.right-contacts
-		margin-left: 15px
-		margin-top: 10px
-		&_adress
-			font: 13px/20px "PT Sans Caption", sans-serif
-			color:  $text-color
-			margin: 0
+    height: 100px
+    padding-top: 34px
+    margin-bottom: 20px
+    &_logo
+        display: block
+        margin-top: -7px
+        @include size(267px 59px)
+    &_menu
+        margin: 0 0 0 30px
+        padding: 0
+    .top-menu
+        &_item
+            @include inline-top
+        &_link
+            position: relative
+            color: $dark-text
+            font: 700 12px/31px "PT Sans Caption", sans-serif
+            letter-spacing: 0.5px
+            display: block
+            padding: 30px 8px 0
+            text-align: center
+            text-transform: uppercase
+            background-position: 50% 0
+            background-repeat: no-repeat
+    &_contacts
+        text-align: left        
+    .left-contacts
+        margin-top: 8px
+        &_phone
+            color:  $dark-text
+            font: 18px/20px "PT Sans Caption", sans-serif
+            text-transform: uppercase
+        &_mail
+            font: 13px/20px "PT Sans Caption", sans-serif
+            color: $orange-color
+    .right-contacts
+        margin-left: 15px
+        margin-top: 10px
+        &_adress
+            font: 13px/20px "PT Sans Caption", sans-serif
+            color:  $text-color
+            margin: 0
 
 .second-header
-	border-bottom: 3px solid $orange-color
-	display: flex
-	&_menu
-		@include inline-top
-		flex-grow: 4
-	.second-menu
-		margin: 0 
-		padding: 0
-		display: flex
-		&_item
-			flex-grow: 3
-			@include inline-top	
-		&_link
-			display: block
-			color: $white-color
-			font: 12px/58px "PT Sans Caption", sans-serif
-			text-transform: uppercase
-			white-space: nowrap
-			background-color:  $dark-text
-			text-align: center	
-			border-right: 1px solid #313337
-			&:hover:not(.active)
-				background-color: $orange-color
-			&.active
-				color:#50545d
-			&:not(.link-home)
-				padding: 0 20px
-		.link-home
-			position: relative
-			height: 100%
-			flex-grow: 1
-			background-image: url("../img/pictures/dark-home.png")
-			background-position: center
-			background-repeat: no-repeat
-			padding: 0 12px
-				
-	&_search-form
-		width: 300px
-		float: right
-		position: relative
-		height: 58px
-		padding: 14px 20px
-		@include inline-top
-		background-color:  $dark-text
-	.search-form
-		&_inpt
-			width: 100%
-			height: 100%
-			padding: 5px 35px 5px 5px
-			border: none
-			outline: none
-			font: 16px "PT Sans Caption", sans-serif
-			color: $dark-text
-			background-color: #50545d
-			&:focus
-				background-color: #FFF
-		&_button
-			position: absolute
-			@include size(22px)
-			background-color: #33373f
-			background-image: url("../img/pictures/search-icon.png")
-			background-repeat: no-repeat
-			top: 18px
-			right: 25px
-			cursor: pointer
-			outline: none
-			border: none
-			background-color: transparent	
+    border-bottom: 3px solid $orange-color
+    display: flex
+    &_menu
+        @include inline-top
+        flex-grow: 4
+    .second-menu
+        margin: 0 
+        padding: 0
+        display: flex
+        &_item
+            flex-grow: 3
+            @include inline-top 
+        &_link
+            display: block
+            color: $white-color
+            font: 12px/58px "PT Sans Caption", sans-serif
+            text-transform: uppercase
+            white-space: nowrap
+            background-color:  $dark-text
+            text-align: center  
+            border-right: 1px solid #313337
+            &:hover:not(.active)
+                background-color: $orange-color
+            &.active
+                color:#50545d
+            &:not(.link-home)
+                padding: 0 20px
+        .link-home
+            position: relative
+            height: 100%
+            flex-grow: 1
+            background-image: url("../img/pictures/dark-home.png")
+            background-position: center
+            background-repeat: no-repeat
+            padding: 0 12px
+                
+    &_search-form
+        width: 300px
+        float: right
+        position: relative
+        height: 58px
+        padding: 14px 20px
+        @include inline-top
+        background-color:  $dark-text
+    .search-form
+        &_inpt
+            width: 100%
+            height: 100%
+            padding: 5px 35px 5px 5px
+            border: none
+            outline: none
+            font: 16px "PT Sans Caption", sans-serif
+            color: $dark-text
+            background-color: #50545d
+            &:focus
+                background-color: #FFF
+        &_button
+            position: absolute
+            @include size(22px)
+            background-color: #33373f
+            background-image: url("../img/pictures/search-icon.png")
+            background-repeat: no-repeat
+            top: 18px
+            right: 25px
+            cursor: pointer
+            outline: none
+            border: none
+            background-color: transparent   
 .slider
-	@include size(100% 340px)
-	&_slide
-		color: $white-color
-		@include size(100%)
-		padding: 40px 60px 
-		background:  url("../img/img/slider.png") 0 0 no-repeat
-	.slide
-		&_title
-			display: inline-block
-			white-space: nowrap
-			margin: 0
-			padding: 20px 20px 20px 60px
-			margin-left: -60px
-			font: 700 36px/40px "PT Sans Caption", sans-serif
-			text-transform: uppercase
-			background-color: $orange-color
-			// &:nth-child(1)
-			// 	width: 630px
-			&:nth-child(2)
-				// width: 371px
-				padding-top: 0
-				margin-top: -20px	
-		&_price
-	  		font: 700 36px/36px "PT Sans Caption", sans-serif
-	  		margin-right: 40px
-	  		@include inline-middle
-		&_img
-	  		float: right
-	  		@include size(260px)
-	  		border: 5px solid $orange-color
-		&_button
-	  		color:inherit
-	  		font: 16px/25px "PT Sans Caption", sans-serif
-	  		text-transform: uppercase
-	  		padding: 9px 43px
-	  		border: 2px solid $orange-color
-	  		@include inline-middle
-		&_descr
-			font: 13px/25px "PT Sans Caption", sans-serif
-			color: #ccc
-			padding-bottom: 10px
-			margin-bottom: 20px
-			height: 60px
-			overflow: hidden
-			
+    @include size(100% 340px)
+    &_slide
+        color: $white-color
+        @include size(100%)
+        padding: 40px 60px 
+        background:  url("../img/img/slider.png") 0 0 no-repeat
+    .slide
+        &_title
+            display: inline-block
+            white-space: nowrap
+            margin: 0
+            padding: 20px 20px 20px 60px
+            margin-left: -60px
+            font: 700 36px/40px "PT Sans Caption", sans-serif
+            text-transform: uppercase
+            background-color: $orange-color
+            // &:nth-child(1)
+            //  width: 630px
+            &:nth-child(2)
+                // width: 371px
+                padding-top: 0
+                margin-top: -20px   
+        &_price
+            font: 700 36px/36px "PT Sans Caption", sans-serif
+            margin-right: 40px
+            @include inline-middle
+        &_img
+            float: right
+            @include size(260px)
+            border: 5px solid $orange-color
+        &_button
+            color:inherit
+            font: 16px/25px "PT Sans Caption", sans-serif
+            text-transform: uppercase
+            padding: 9px 43px
+            border: 2px solid $orange-color
+            @include inline-middle
+        &_descr
+            font: 13px/25px "PT Sans Caption", sans-serif
+            color: #ccc
+            padding-bottom: 10px
+            margin-bottom: 20px
+            height: 60px
+            overflow: hidden
+            
 .block-partners
-	background-color: $light-grey
-	color: $dark-text
-	padding: 15px 0
-	p
-		margin: 0
-	&_title
-		margin: 10px 0 0 0
-		text-align: center
-	&_item
-		margin-right:60px
-	&_img,
-	&_text,
-	&_item
-		@include inline-middle
-	&_text
-		font: 700 16px/20px "PT Sans Caption", sans-serif;
-		text-align: left
-	&_img
-		margin-right: 15px
-	&_link
-		color: $orange-color	
-	.apple-logo
-		@include size(25px 30px)
-	.htc-logo
-		@include size(65px 22px)
-	.lg-logo
-		@include size(65px 30px)
+    background-color: $light-grey
+    color: $dark-text
+    padding: 15px 0
+    p
+        margin: 0
+    &_title
+        margin: 10px 0 0 0
+        text-align: center
+    &_item
+        margin-right:60px
+    &_img,
+    &_text,
+    &_item
+        @include inline-middle
+    &_text
+        font: 700 16px/20px "PT Sans Caption", sans-serif;
+        text-align: left
+    &_img
+        margin-right: 15px
+    &_link
+        color: $orange-color    
+    .apple-logo
+        @include size(25px 30px)
+    .htc-logo
+        @include size(65px 22px)
+    .lg-logo
+        @include size(65px 30px)
 
 .main-aside
-	margin-bottom: 0
-	&_news,
-	&_articles,
-	&_features
-		margin-bottom: 30px
-	.features
-		&_block
-			padding: 18px 10px 20px 30px
-			text-align: left
-			&:nth-child(1)
-				background-color: $orange-color
-			&:nth-child(2)
-				background-color: desaturate(darken($orange-color, 2%), 3%)
-			&:nth-child(3)
-				background-color: desaturate(darken($orange-color, 4%), 3%)
-			&:nth-child(4)
-				background-color: desaturate(darken($orange-color, 6%), 3%)	
-		&_title
-			margin: 0 0 5px 0
-		&-list
-			margin: 0
-			padding: 0
-		.feature-list
-			&_item
-				position: relative
-				margin-bottom: 10px
-				display: block
-				padding: 0 0 0 20px
-				&::before
-					content: ""
-					position: absolute
-					@include size(4px 7px)
-					top: 7px
-					left: 0
-					background-image: url("../img/pictures/sprite.png")
-					background-repeat: no-repeat
-					background-position: -56px -85px
-			&_link
-				color: $white-color
-				letter-spacing: -0.3px
-				font: 400 13px/20px "PT Sans Caption", sans-serif
-				&:hover
-					border-bottom: 1px solid $white-color
-				
+    margin-bottom: 0
+    &_news,
+    &_articles,
+    &_features
+        margin-bottom: 30px
+    .features
+        &_block
+            padding: 18px 10px 20px 30px
+            text-align: left
+            &:nth-child(1)
+                background-color: $orange-color
+            &:nth-child(2)
+                background-color: desaturate(darken($orange-color, 2%), 3%)
+            &:nth-child(3)
+                background-color: desaturate(darken($orange-color, 4%), 3%)
+            &:nth-child(4)
+                background-color: desaturate(darken($orange-color, 6%), 3%) 
+        &_title
+            margin: 0 0 5px 0
+        &-list
+            margin: 0
+            padding: 0
+        .feature-list
+            &_item
+                position: relative
+                margin-bottom: 10px
+                display: block
+                padding: 0 0 0 20px
+                &::before
+                    content: ""
+                    position: absolute
+                    @include size(4px 7px)
+                    top: 7px
+                    left: 0
+                    background-image: url("../img/pictures/sprite.png")
+                    background-repeat: no-repeat
+                    background-position: -56px -85px
+            &_link
+                color: $white-color
+                letter-spacing: -0.3px
+                font: 400 13px/20px "PT Sans Caption", sans-serif
+                &:hover
+                    border-bottom: 1px solid $white-color
+                
 
 
 
@@ -309,8 +309,8 @@ h3
 
 
 
-		
-	
+        
+    
 
 
 
