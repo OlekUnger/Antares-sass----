@@ -174,8 +174,9 @@ h3
             position: absolute
             @include size(22px)
             background-color: #33373f
-            background-image: url("../img/pictures/search-icon.png")
+            background-image: url("../img/pictures/sprite.png")
             background-repeat: no-repeat
+            background-position: -90px -14px
             top: 18px
             right: 25px
             cursor: pointer
@@ -229,7 +230,7 @@ h3
             overflow: hidden
             
 .block-partners
-    background-color: $light-grey
+    background-color: $light-gray
     color: $dark-text
     padding: 15px 0
     p
@@ -257,30 +258,89 @@ h3
     .lg-logo
         @include size(65px 30px)
 
-.main-aside
-    margin-bottom: 0
-    &_news,
-    &_articles,
-    &_features
-        margin-bottom: 30px
-    .features
-        &_block
-            padding: 18px 10px 20px 30px
-            text-align: left
-            &:nth-child(1)
-                background-color: $orange-color
-            &:nth-child(2)
-                background-color: desaturate(darken($orange-color, 2%), 3%)
-            &:nth-child(3)
-                background-color: desaturate(darken($orange-color, 4%), 3%)
-            &:nth-child(4)
-                background-color: desaturate(darken($orange-color, 6%), 3%) 
+#main
+    .aside
+        margin-bottom: 0
+
+.aside
+    &_item
+        margin-bottom: 30px   
+    &_item-block
+        text-align: left
+        padding: 22px 5px 0 0
+    .item-block
+        &_text,
+        &_img
+            @include inline-top
+        &_img
+            @include size(80px)
+            overflow: hidden
+            margin-right: 15px
+        .thin-text
+            width: 180px
         &_title
-            margin: 0 0 5px 0
-        &-list
-            margin: 0
-            padding: 0
-    .feature-list
+            display: block
+            margin: 10px 0 3px
+            font: 700 16px/20px "PT Sans Caption", sans-serif
+            color: $dark-text
+            &:hover
+                color: $orange-color
+        &_date
+            font: 400 12px/12px "PT Sans Caption", sans-serif
+            padding: 6px 10px
+            background-color: $light-gray
+            color: $text-color
+        &_link
+            position: relative
+            color: $orange-color
+            &::before
+                content: ""
+                position: absolute
+                top: 10px
+                right: -30px
+                @include size(15px 1px)
+                background-color: $orange-color
+            &::after
+                content: ""
+                position: absolute
+                top: 8px
+                right: -33px
+                @include size(5px)
+                border-left: 2.5px solid $orange-color
+                border-right: 2.5px solid transparent
+                border-bottom: 2.5px solid transparent
+                border-top: 2.5px solid transparent 
+.item-header
+    border-bottom: 1px solid $light-gray    
+    &_title
+        display: inline-block
+        margin: 10px 0
+    &_button
+        color: $orange-color
+        font: 400 13px/28px "PT Sans Caption", sans-serif
+        padding: 0 20px
+        margin-top: 8px
+        border: 1px solid $orange-color
+        float: right
+
+.aside-features
+    &_block
+        padding: 18px 10px 20px 30px
+        text-align: left
+        &:nth-child(1)
+             background-color: $orange-color
+        &:nth-child(2)
+            background-color: desaturate(darken($orange-color, 2%), 3%)
+        &:nth-child(3)
+            background-color: desaturate(darken($orange-color, 4%), 3%)
+        &:nth-child(4)
+            background-color: desaturate(darken($orange-color, 6%), 3%) 
+    &_title
+        margin: 0 0 5px 0
+    &_list
+        margin: 0
+        padding: 0
+    .features-list
         &_item
             position: relative
             margin-bottom: 10px
@@ -289,12 +349,13 @@ h3
             &::before
                 content: ""
                 position: absolute
-                @include size(4px 7px)
+                @include size(8px 7px)
                 top: 7px
                 left: 0
-                background-image: url("../img/pictures/sprite.png")
-                background-repeat: no-repeat
-                background-position: -56px -85px
+                border-left: 4px solid $white-color
+                border-right: 4px solid transparent
+                border-bottom: 3.5px solid transparent
+                border-top: 3.5px solid transparent 
         &_link
             color: $white-color
             letter-spacing: -0.3px
@@ -302,16 +363,65 @@ h3
             &:hover
                 border-bottom: 1px solid $white-color
                 
+.main-content
+    padding-left: 40px
+    &_title
+        margin: 5px 0 0
+        font: 700 36px/36px "PT Sans Caption", sans-serif
+        color: $dark-text
+.text-block   
+    &_description
+        font: 700 18px/25px"PT Sans Caption", sans-serif
+        color:  $dark-text
+    &_text
+        font: 400 13px/20px "PT Sans Caption", sans-serif
+        color:  $text-color
 
+.product-block
+    display: flex
+    justify-content: space-between
+    margin: 20px 0 20px -20px
+    &_item
+        width: 260px
+        min-height: 420px
+        margin-left: 20px
+        padding: 7px
+        outline: 1px solid $light-gray
+        &:hover
+            outline: 3px solid $orange-color
+    .product-item
+        &_img
+            display: block
+            @include size(201px 184px)
+            margin: 0 auto
+        &_descr
+            min-height: 160px
+        &_title
+            margin: 0
+            padding: 14px 10px
+            color: $orange-color
+            font: 400 18px/20px "PT Sans Caption", sans-serif
+        &_parameter
+            margin: 0
+            padding: 0 7px
+            font: 400 12px/25px "PT Sans Caption", sans-serif
+            color:  $text-color
+            background-color: $white-color
+            &:nth-child(2n)
+                background-color: $light-gray
+            span
+                float:right
+        &_price
+            display: block
+            font: 700 24px "PT Sans Caption", sans-serif
+            color: $dark-text
+            padding: 13px 10px
+            span
+                font-weight: 400
 
-
-
-
-
-
-        
-    
-
-
+#footer
+    min-height: 190px
+    box-shadow: inset 0 3px 0 $orange-color
+    background-color: #33373f
 
 
