@@ -3,7 +3,7 @@ $dark-text: #24262a;
 $text-color: #666;
 $light-gray: #f3f3f3;
 $white-color: #fff;
-
+$font-family: "PT Sans Caption", sans-serif;
 
 @mixin clearfix {
   &::after {
@@ -84,3 +84,18 @@ $white-color: #fff;
     border-bottom: 1/2*$size solid transparent;
   }
 }
+
+@mixin font-bold($font-size, $line-height){
+    font-weight: 700;
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height
+}
+
+@mixin font-normal($font-size, $line-height){
+    font-weight: 400;
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height
+  }
+

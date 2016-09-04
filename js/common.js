@@ -1,43 +1,17 @@
-$(function() {
 
-	//SVG Fallback
-	if(!Modernizr.svg) {
-		$("img[src*='svg']").attr("src", function() {
-			return $(this).attr("src").replace(".svg", ".png");
-		});
-	};
+var link = document.querySelector(".product-item_img");
+var popup = document.querySelector(".product-item_enlarge");
+var linkClose = document.querySelector(".overlay")
 
-	//E-mail Ajax Send
-	//Documentation & Example: https://github.com/agragregra/uniMail
-	$("form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});
+link.addEventListener("click", function(event) {
+     	event.preventDefault();
+     	popup.classList.add("scale-enlarge"); 
+     });	 
 
-	//Chrome Smooth Scroll
-	try {
-		$.browserSelector();
-		if($("html").hasClass("chrome")) {
-			$.smoothScroll();
-		}
-	} catch(err) {
-
-	};
-
-	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
-	
-});
+linkClose.addEventListener("click", function(event) {
+     	event.preventDefault();
+     	popup.classList.remove("scale-enlarge"); 
+     });
 
 $(window).load(function() {
 

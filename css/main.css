@@ -46,11 +46,11 @@ html.js .loader .loader_inner {
 }
 
 body {
+  position: relative;
   font-family: "PT Sans Caption", sans-serif;
   font-weight: normal;
   font-size: 13px;
   min-width: 320px;
-  position: relative;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -72,6 +72,11 @@ body textarea:required:valid {
 
 * {
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .clearfix::after {
@@ -96,10 +101,6 @@ h3 {
   text-transform: uppercase;
 }
 
-* {
-  box-sizing: border-box !important;
-}
-
 #header {
   margin-bottom: 30px;
   box-shadow: inset 0 5px 0 0 #df5f47;
@@ -118,7 +119,7 @@ h3 {
   width: 267px;
 }
 
-.top-header_menu {
+.top-header_top-menu {
   margin: 0 0 0 30px;
   padding: 0;
 }
@@ -131,7 +132,10 @@ h3 {
 .top-header .top-menu_link {
   position: relative;
   color: #24262a;
-  font: 700 12px/31px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 12px;
+  line-height: 31px;
   letter-spacing: 0.5px;
   display: block;
   padding: 30px 8px 0;
@@ -142,31 +146,42 @@ h3 {
 }
 
 .top-header_contacts {
-  text-align: left;
-}
-
-.top-header .left-contacts {
   margin-top: 8px;
 }
 
-.top-header .left-contacts_phone {
+.contacts-left, .contacts-right {
+  text-align: left;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.contacts-right {
+  margin-left: 15px;
+}
+
+.contacts_phone {
   color: #24262a;
-  font: 18px/20px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
   text-transform: uppercase;
 }
 
-.top-header .left-contacts_mail {
-  font: 13px/20px "PT Sans Caption", sans-serif;
+.contacts_mail {
+  display: block;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 13px;
+  line-height: 20px;
   color: #df5f47;
 }
 
-.top-header .right-contacts {
-  margin-left: 15px;
-  margin-top: 10px;
-}
-
-.top-header .right-contacts_adress {
-  font: 13px/20px "PT Sans Caption", sans-serif;
+.contacts_adress {
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 13px;
+  line-height: 20px;
   color: #666;
   margin: 0;
 }
@@ -178,7 +193,7 @@ h3 {
   display: flex;
 }
 
-.second-header_menu {
+.second-header_nav {
   display: inline-block;
   vertical-align: top;
   -webkit-flex-grow: 4;
@@ -186,15 +201,16 @@ h3 {
           flex-grow: 4;
 }
 
-.second-header .second-menu {
+.second-header_nav-list {
   margin: 0;
   padding: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
 }
 
-.second-header .second-menu_item {
+.second-header .nav-list_item {
   -webkit-flex-grow: 3;
       -ms-flex-positive: 3;
           flex-grow: 3;
@@ -202,31 +218,34 @@ h3 {
   vertical-align: top;
 }
 
-.second-header .second-menu_link {
+.second-header .nav-list_link {
   display: block;
   color: #fff;
-  font: 12px/58px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 12px;
+  line-height: 58px;
   text-transform: uppercase;
   white-space: nowrap;
   background-color: #24262a;
   text-align: center;
   border-right: 1px solid #313337;
+  height: 100%;
 }
 
-.second-header .second-menu_link:hover:not(.active) {
+.second-header .nav-list_link:hover:not(.active) {
   background-color: #df5f47;
 }
 
-.second-header .second-menu_link.active {
-  color: #50545d;
+.second-header .nav-list_link.active {
+  background-color: #24262a;
 }
 
-.second-header .second-menu_link:not(.link-home) {
+.second-header .nav-list_link:not(.link-home) {
   padding: 0 20px;
 }
 
-.second-header .second-menu .link-home {
-  position: relative;
+.second-header .nav-list .link-home {
   height: 100%;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -243,8 +262,6 @@ h3 {
   position: relative;
   height: 58px;
   padding: 14px 20px;
-  display: inline-block;
-  vertical-align: top;
   background-color: #24262a;
 }
 
@@ -253,8 +270,10 @@ h3 {
   height: 100%;
   padding: 5px 35px 5px 5px;
   border: none;
-  outline: none;
-  font: 16px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
   color: #24262a;
   background-color: #50545d;
 }
@@ -267,16 +286,55 @@ h3 {
   position: absolute;
   height: 22px;
   width: 22px;
-  background-color: #33373f;
   background-image: url("../img/pictures/sprite.png");
   background-repeat: no-repeat;
   background-position: -90px -14px;
   top: 18px;
   right: 25px;
   cursor: pointer;
-  outline: none;
   border: none;
   background-color: transparent;
+}
+
+.second-header_line {
+  background-color: #df5f47;
+  padding: 0 15px 5px;
+}
+
+.second-header_line .link-home-white {
+  display: inline-block;
+  vertical-align: top;
+  background-image: url("../img/pictures/home-light.png");
+  background-color: transparent;
+  width: 25px;
+  height: 18px;
+  margin-right: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.second-header_line .line-link {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  color: #934536;
+  padding-left: 30px;
+}
+
+.second-header_line .line-link::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 3px;
+  height: 17px;
+  width: 17px;
+  background-image: url("../img/pictures/sprite.png");
+  background-repeat: no-repeat;
+  background-position: -107px -47px;
 }
 
 .slider {
@@ -298,7 +356,10 @@ h3 {
   margin: 0;
   padding: 20px 20px 20px 60px;
   margin-left: -60px;
-  font: 700 36px/40px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 36px;
+  line-height: 40px;
   text-transform: uppercase;
   background-color: #df5f47;
 }
@@ -309,7 +370,10 @@ h3 {
 }
 
 .slider .slide_price {
-  font: 700 36px/36px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 36px;
+  line-height: 36px;
   margin-right: 40px;
   display: inline-block;
   vertical-align: middle;
@@ -324,7 +388,10 @@ h3 {
 
 .slider .slide_button {
   color: inherit;
-  font: 16px/25px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
   text-transform: uppercase;
   padding: 9px 43px;
   border: 2px solid #df5f47;
@@ -333,10 +400,13 @@ h3 {
 }
 
 .slider .slide_descr {
-  font: 13px/25px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 13px;
+  line-height: 25px;
   color: #ccc;
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin: 15px 0 20px;
   height: 60px;
   overflow: hidden;
 }
@@ -366,7 +436,10 @@ h3 {
 }
 
 .block-partners_text {
-  font: 700 16px/20px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
   text-align: left;
 }
 
@@ -391,10 +464,6 @@ h3 {
 .block-partners .lg-logo {
   height: 30px;
   width: 65px;
-}
-
-#main .aside {
-  margin-bottom: 0;
 }
 
 .aside_item {
@@ -425,7 +494,10 @@ h3 {
 .aside .item-block_title {
   display: block;
   margin: 10px 0 3px;
-  font: 700 16px/20px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
   color: #24262a;
 }
 
@@ -434,7 +506,10 @@ h3 {
 }
 
 .aside .item-block_date {
-  font: 400 12px/12px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 12px;
+  line-height: 12px;
   padding: 6px 10px;
   background-color: #f3f3f3;
   color: #666;
@@ -479,7 +554,10 @@ h3 {
 
 .item-header_button {
   color: #df5f47;
-  font: 400 13px/28px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 13px;
+  line-height: 28px;
   padding: 0 20px;
   margin-top: 8px;
   border: 1px solid #df5f47;
@@ -539,7 +617,10 @@ h3 {
 .aside-features .features-list_link {
   color: #fff;
   letter-spacing: -0.3px;
-  font: 400 13px/20px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 13px;
+  line-height: 20px;
 }
 
 .aside-features .features-list_link:hover {
@@ -547,39 +628,63 @@ h3 {
 }
 
 .main-content {
+  position: relative;
   padding-left: 40px;
 }
 
 .main-content_title {
-  margin: 5px 0 0;
-  font: 700 36px/36px "PT Sans Caption", sans-serif;
+  margin: 5px 0 15px;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 36px;
+  line-height: 36px;
   color: #24262a;
 }
 
 .text-block_description {
-  font: 700 18px/25px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
   color: #24262a;
+  margin: 0 0 22px;
 }
 
 .text-block_text {
-  font: 400 13px/20px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 13px;
+  line-height: 20px;
   color: #666;
+  margin: 0 0 10px;
+}
+
+.text-block h3 {
+  margin-bottom: 20px;
+}
+
+.new-products {
+  border-bottom: 1px solid #f3f3f3;
+  margin-bottom: 40px;
 }
 
 .product-block {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 20px 0 20px -20px;
+  margin: 30px 0  0 -20px;
 }
 
 .product-block_item {
   width: 260px;
   min-height: 420px;
-  margin-left: 20px;
+  margin: 0 0 20px 20px;
   padding: 7px;
   outline: 1px solid #f3f3f3;
 }
@@ -603,13 +708,19 @@ h3 {
   margin: 0;
   padding: 14px 10px;
   color: #df5f47;
-  font: 400 18px/20px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .product-block .product-item_parameter {
   margin: 0;
   padding: 0 7px;
-  font: 400 12px/25px "PT Sans Caption", sans-serif;
+  font-weight: 400;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 12px;
+  line-height: 25px;
   color: #666;
   background-color: #fff;
 }
@@ -624,7 +735,10 @@ h3 {
 
 .product-block .product-item_price {
   display: block;
-  font: 700 24px "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
   color: #24262a;
   padding: 13px 10px;
 }
@@ -633,8 +747,107 @@ h3 {
   font-weight: 400;
 }
 
-#footer {
+.product-item_enlarge {
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  display: none;
+  height: 368px;
+  width: 402px;
+  margin: 0 auto;
+  border: 5px solid #df5f47;
+}
+
+.scale-enlarge {
+  display: block;
+}
+
+.footer {
   min-height: 190px;
+  margin-top: 40px;
   box-shadow: inset 0 3px 0 #df5f47;
   background-color: #33373f;
+  padding-top: 50px;
+}
+
+.footer p {
+  color: #666;
+}
+
+.footer a {
+  color: #fff;
+}
+
+.footer_copyright {
+  margin-top: 80px;
+}
+
+.footer-nav-list {
+  height: 120px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.footer-nav-list_item {
+  text-align: left;
+  border-bottom: 1px solid #666;
+  padding: 7px 0;
+  margin: 0 40px;
+}
+
+.footer-nav-list_item:nth-child(3n) {
+  border-bottom: none;
+}
+
+.footer-nav-list_link {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.pagination {
+  font-size: 0;
+  margin-bottom: 40px;
+}
+
+.pagination_link {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 18px;
+  line-height: 48px;
+  width: 48px;
+  margin-left: -1px;
+  text-align: center;
+  color: #df5f47;
+  border: 1px solid #f3f3f3;
+}
+
+.pagination_link.active {
+  background-color: #f3f3f3;
+  color: #666;
+}
+
+.pagination_link:first-child, .pagination_link:last-child {
+  font-size: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pagination_link:first-child {
+  background-image: url("../img/pictures/arrow-left-m.png");
+}
+
+.pagination_link:last-child {
+  background-image: url("../img/pictures/arrow-right-m.png");
 }
